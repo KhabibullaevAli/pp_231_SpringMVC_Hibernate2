@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<p align="center">User added</p>
+<div>
+    <table border="1">
+        <tr>
+            <th> Name</th>
+            <th> Age</th>
+        </tr>
+        <tr>
+            <td th:text="${user.getName()}">...</td>
+            <td th:text="${user.getAge()}">...</td>
+        </tr>
+    </table>
+</div>
+<a href="/users">Go to the list of the users</a>
+</body>
+</html>
