@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import web.model.User;
 import java.util.List;
 
-@Component
+
 public class UserDaoImpl implements UserDao {
 
    private final JdbcTemplate jdbcTemplate;
