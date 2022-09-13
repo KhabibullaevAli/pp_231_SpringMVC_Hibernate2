@@ -1,4 +1,4 @@
-package web.controllers;
+package web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,19 +18,19 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public String userList(Model model) {
+    public String getUserList(Model model) {
         model.addAttribute(userService.getUserList());
         return "users";
     }
 
     @GetMapping("/user/{id}")
-    public String user(@PathVariable("id") int id, Model model) {
+    public String getUserDetails(@PathVariable("id") int id, Model model) {
         model.addAttribute(userService.getUserById(id));
         return "user_by_id";
     }
 
     @GetMapping("/new")
-    public String newUser(Model model) {
+    public String newUserForm(Model model) {
         model.addAttribute("user", new User());
         return "new";
     }
@@ -42,7 +42,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}/edit")
-    public String edit(@PathVariable("id") int id, Model model) {
+    public String editUserForm(@PathVariable("id") int id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
         return "edit";
     }

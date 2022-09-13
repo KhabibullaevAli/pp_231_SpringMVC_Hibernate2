@@ -58,8 +58,7 @@ public class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        if (age != user.age) return false;
-        return name.equals(user.name);
+        return id == user.id;
     }
 
     @Override
