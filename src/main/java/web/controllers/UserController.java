@@ -20,7 +20,7 @@ public class UserController {
     @GetMapping("/users")
     public String userList(Model model) {
         model.addAttribute(userService.getUserList());
-        return "/users";
+        return "users";
     }
 
     @GetMapping("/user/{id}")
@@ -32,19 +32,19 @@ public class UserController {
     @GetMapping("/new")
     public String newUser(Model model) {
         model.addAttribute("user", new User());
-        return "/new";
+        return "new";
     }
 
     @PostMapping("/save")
     public String saveUser(@ModelAttribute("user") User user) {
         userService.save(user);
-        return "/save";
+        return "save";
     }
 
     @GetMapping("/{id}/edit")
     public String edit(@PathVariable("id") int id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
-        return "/edit";
+        return "edit";
     }
 
     @PatchMapping("/user/{id}")
