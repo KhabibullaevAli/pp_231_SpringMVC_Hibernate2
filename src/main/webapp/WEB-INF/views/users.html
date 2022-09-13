@@ -7,7 +7,6 @@
 </head>
 <body>
 <p align="center">List of users</p>
-<p align="center">List of users</p>
 <div>
     <table border="1">
         <tr>
@@ -20,7 +19,16 @@
             <td th:text="${user.getId()}">...</td>
             <td th:text="${user.getName()}">...</td>
             <td th:text="${user.getAge()}">...</td>
-            <td><a th:href="@{/user/{id}(id=${user.getId()})}">See user info</a></td>
+
+            <td align="center">
+                <form th:method="GET" th:action="@{/{id}/edit(id=${user.getId()})}">
+                    <input type="submit" value="  Edit  "/>
+                </form>
+
+                <form th:method="DELETE" th:action="@{/user/{id}(id=${user.getId()})}">
+                    <input type="submit" value="Delete"/>
+                </form>
+            </td>
         </tr>
     </table>
 </div>
